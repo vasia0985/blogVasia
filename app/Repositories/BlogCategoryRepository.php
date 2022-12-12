@@ -37,18 +37,18 @@ class BlogCategoryRepository extends CoreRepository
         ]);
 
         //$result = $this->startConditions()->all();
-        /*$result = $this                           //1 варіант
+        $result = $this                           //1 варіант
             ->startConditions()
             ->select('blog_categories.*',
                 \DB::raw('CONCAT (id, ". ", title) AS id_title'))
             ->toBase()                              //не робити колекцію(масив) BlogCategory, отримати дані у вигляді класу
-            ->get();*/
+            ->get();
 
-        $result = $this                           //2 варіант
+        /*$result = $this                           //2 варіант
         ->startConditions()
             ->selectRaw($columns)
             ->toBase()
-            ->get();
+            ->get();*/
 
         //dd($result);
 
